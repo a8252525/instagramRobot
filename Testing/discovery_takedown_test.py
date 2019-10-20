@@ -23,7 +23,7 @@ soup=BeautifulSoup(res, 'lxml')
 
 img_alt=soup.find_all('img',{'src':re.compile('http:.*?\.jpg')})
 
-for link in img_alt:2
+for link in img_alt:
     url=link['src']
     with requests.get(url, stream=True) as r:
         image_name=url.split('/')[-1]
